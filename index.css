@@ -1,0 +1,429 @@
+body {
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/*..................... Styling the navbar...................... */
+
+.navbar {
+    box-sizing: border-box;
+    box-shadow: 5px 10px 20px rgb(130, 163, 201);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%; 
+    display: flex; 
+    justify-content: center;
+}
+
+/* Container for navbar items */
+.nav {
+    width: 50%; 
+}
+
+/* Navbar items */
+.navitems {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+    font-family: "Roboto Mono", monospace;
+    font-weight: bold;
+}
+
+/* List items in navbar */
+.navitems li {
+    margin: 0; 
+    padding: 0;
+}
+
+/* Links in navbar */
+.navitems a {
+    text-decoration: none;
+    color: inherit;
+    padding: 5px 15px; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: block; /* Make links fill the list item area */
+    line-height: 30px; 
+}
+
+/* Hover effect for links */
+.navitems a:hover {
+    background-color: rgb(193, 222, 222);
+    box-shadow: 0 4px 8px rgb(130, 163, 201);
+    border-radius: 10%;
+    
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown button */
+.dropbtn::after {
+    content: ' ▼';
+    font-size: 12px;
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    padding: 8px 12px; 
+    display: block;
+    text-align: left;
+    line-height: 25px; 
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: rgb(180, 207, 207);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Align dropdown content below "More" */
+.dropdown-content {
+    left: 0;
+    top: 100%;
+}
+
+/* first intro part */
+
+.intro{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.intro h1{
+    text-decoration:underline dotted rgb(223, 128, 223);
+    background: linear-gradient(to right, rgb(3, 80, 103), rgb(168, 35, 212));
+    background-clip: text;
+    color: transparent;
+    
+}
+.intro p{
+    max-width:80%;
+}
+
+/* ........................main blog content ................................*/
+
+.blog{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* Keyframes for fade-in animation */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Optional: Initial position */
+    }
+    10% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Final position */
+    }
+    80% {
+        opacity: 1; /* Remain fully visible */
+        transform: translateY(0); /* Final position */
+    }
+    100% {
+        opacity: 0; /* Fade out to invisible */
+        transform: translateY(20px); /* Optional: Final position */
+    }
+}
+/* Keyframes for fade-in-zoom animation */
+
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.8); /* smaller scale */
+    }
+    10% {
+        opacity: 1; /* Fully visible */
+        transform: scale(1); /*default*/
+    }
+    80% {
+        opacity: 1; 
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0; /* Fade out to invisible */
+        transform: scale(1.1); /* larger than normal size */
+    }
+}
+
+/* Apply animation */
+.fade-in {
+    animation: fadeIn 10s ease-in-out infinite; 
+}
+
+
+
+.fade-in.visible {
+    opacity: 1; /* Ensure it's visible after animation finished */
+}
+
+/* video animation*/
+
+.fade-in-video {
+    opacity: 0; /* Start as invisible */
+    animation: fadeInZoom 15s ease-in-out infinite; 
+}
+
+.section {
+    margin: 100px;
+}
+
+/* .....................Image floating and alignment style in main blog..................... */
+
+.floating-image {
+    float: right;
+    margin: 0 0 15px 15px; /* Adds space between the text and the image */
+    width: 500px; /* Adjust width as needed */
+    height: 300px; /* Maintains the aspect ratio */
+}
+/* heading styling */
+.section h2 {
+    color: rgb(3, 80, 103);
+}
+
+/* image texture adding to the text */
+
+.container {
+    position: relative;
+    overflow: hidden; /* Ensure the container hides overflow */
+    display: inline-block; /* Adjusts to the size of the text */
+}
+.trek {
+    font-weight: bold;
+    font-size: 38px; 
+    background-image: url('images/trekking-texture.jpg');
+    background-size: cover; /* image covers the text */
+    background-position: center; /* Center the image within the text */
+    -webkit-background-clip: text;
+    color: transparent; /* Makes the text itself transparent to show the image */
+    display: inline-block; /* Prevents the text from being cut off */
+    position: relative;
+    z-index: 1; /* Ensure it stays on top of other elements */
+}
+
+.craft{
+    font-weight: bold;
+    font-size: 38px; 
+    background-image: url('images/crafting-texture.jpg');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    color: transparent; 
+    display: inline-block;
+    position: relative;
+    z-index: 1; 
+}
+
+.paint{
+    font-weight: bold;
+    font-size: 38px; 
+    background-image: url('images/painting-texture.jpg');
+    background-size: cover; 
+    background-position: center; 
+    -webkit-background-clip: text;
+    color: transparent; 
+    display: inline-block; 
+    position: relative;
+    z-index: 1; 
+}
+
+.music{
+    font-weight: bold;
+    font-size: 38px; 
+    background-image: url('images/music-texture.jpg');
+    background-size: cover;
+    background-position: center; 
+    -webkit-background-clip: text;
+    color: transparent; 
+    display: inline-block; 
+    position: relative;
+    z-index: 1; 
+}
+
+
+
+
+/* .........................Paragraph styling........................ */
+
+.section p {
+    text-align: justify;
+    line-height: 35px;
+}
+
+.section button{
+    background:linear-gradient(to right, rgb(239, 243, 244), rgb(156, 208, 219));;
+    padding:15px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family:monospace;
+    display: block;
+    margin: 20px auto;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+.section button:hover {
+    background: linear-gradient(to right, rgb(156, 208, 219), rgb(239, 243, 244));
+    box-shadow: 5px 2px 20px 4px rgb(177, 102, 149);
+    cursor: pointer;
+}
+.btn{
+    text-decoration: none;
+    color: rgb(3, 80, 103);
+}
+
+/* ....................Embedded video styling................... */
+
+.section iframe {
+    display: block;
+    margin: 100px auto; /* Center aligns the iframe with top and bottom margin */
+    width: 100%;
+    max-width: 560px;
+    
+}
+
+/*..................... about me section................. */
+
+.about{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:100px;
+    box-sizing: border-box;
+    border:  3px solid black;
+
+}
+.about h2{
+    text-decoration: underline dashed rgb(83, 14, 61);
+    color: rgb(3, 80, 103);
+}
+.about p{
+    line-height: 30px;
+    padding: 40px;
+}
+
+/*.................... form style ......................*/
+
+
+#section6 {
+    margin: 100px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); 
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Form heading */
+
+#section6 h2 {
+    text-align: center;
+    color: rgb(3, 80, 103); 
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Form labels */
+
+#section6 label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: rgb(3, 80, 103); 
+}
+
+/* Form inputs and textarea */
+
+#section6 input[type="text"],
+#section6 input[type="email"],
+#section6 textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid rgb(130, 163, 201); 
+    border-radius: 4px; 
+    box-sizing: border-box; /* Ensure padding is included in width */
+    font-family: "Roboto Mono", monospace; 
+}
+
+/* Form button */
+
+#section6 button {
+    background: linear-gradient(to right, rgb(239, 243, 244), rgb(156, 208, 219)); 
+    color: rgb(3, 80, 103); 
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px; 
+    font-weight: bold;
+    font-family: "Roboto Mono", monospace; 
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    margin: 20px auto; 
+}
+
+/* Button hover effect */
+
+#section6 button:hover {
+    background: linear-gradient(to right, rgb(156, 208, 219), rgb(239, 243, 244)); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+
+/*................ Footer styling..................... */
+
+footer {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 20px; 
+    background-color:  rgb(3, 80, 103); 
+    color: white; 
+}
+
+.contacts {
+    display: flex;
+    justify-content: flex-end; /* Aligns the content to the right */
+    gap: 15px; /* Adds space between icons */
+}
+
+.contacts img {
+    width: 24px; 
+    height: 24px;
+}
+
+footer div p {
+    margin: 0;
+}
