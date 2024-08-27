@@ -1,3 +1,4 @@
+
 body {
     background-image: url("images/background.jpg");
     background-size: cover;
@@ -6,6 +7,8 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+
 }
 
 /*..................... Styling the navbar...................... */
@@ -36,6 +39,7 @@ body {
     padding: 0;
     font-family: "Roboto Mono", monospace;
     font-weight: bold;
+    
 }
 
 /* List items in navbar */
@@ -555,6 +559,8 @@ footer div p {
     margin: 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* .....................Image floating and alignment style in main blog..................... */
