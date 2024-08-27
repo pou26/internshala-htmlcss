@@ -567,9 +567,10 @@ footer div p {
 
 .floating-image {
     float:none;
-    margin: 15px; 
-    width: 400px; 
-    height: 300px; 
+    margin: 0; 
+    padding: 0;
+    width: 350px; 
+    height: auto; 
 }
 /* heading styling */
 .section h2 {
