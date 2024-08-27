@@ -561,6 +561,7 @@ footer div p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 
 /* .....................Image floating and alignment style in main blog..................... */
